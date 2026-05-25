@@ -1,0 +1,53 @@
+super + ctrl + r
+	pkill -USR1 -x sxhkd
+
+super + {d,x}
+	{rofi -show run, rofi -show drun}
+
+super +  Return
+	alacritty -e sh -c "nerdfetch; exec zsh"
+
+super + shift + s
+  scrot -s /home/kyd0/Pictures/%Y-%m-%d-%H%M%S.png
+
+super + shift + {b,n,s}
+	{librewolf,nemo,steam}
+
+super + c
+	bspc node -c
+
+super + alt + q
+  bspc quit
+
+super + space
+	bspc node -t "~"{floating,tiled}
+
+super + {t,ctrl + t,f}
+	bspc node -t {tiled,pseudo_tiled,fullscreen}
+
+super + {_,shift + }{1-5}
+	bspc {desktop -f,node -d} '^{1-5}'
+
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+super + ctrl + space
+	bspc node -p cancel
+
+super + ctrl + {h,l,k,j}
+    bspc node -z {left -20 0,right 20 0,top 0 -20,bottom 0 20} 
+
+super + {_,alt + }{h,j,k,l}
+    bspc node -{f,s} {west,south,north,east}
+
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+super + g
+	bspc node -s biggest.window
+
+super + shift + m
+  wpctl set-mute @DEFAULT_SINK@ toggle
+
+super + shift + g
+  ~/.config/stalcraft.sh
